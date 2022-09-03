@@ -212,23 +212,22 @@ const buildSubMenu = (sublinks) => {
         newAnchor.setAttribute("href", sublinks[i].href);
         newAnchor.textContent = sublinks[i].text;
         subMenuEl.append(newAnchor);
-      }
-    };
-  
+ }
+ };
     if (showingSubMenu) {
       buildSubMenu(menuLink.subLinks);
       subMenuEl.style.top = "100%";
-    } else {
+      } else {
       subMenuEl.style.top = "0";
-    }
+}
   
 // Task 6.4
 // If the ABOUT link is clicked, an <h1>about</h1>should be displayed.
     
 if (anchorName === "about") {
       mainEl.innerHTML = "<h1>about</h1>";
-    }
-  });
+}
+});
   
 // Task 6.0
 // Attach a delegated 'click' event listener to subMenuEl.
@@ -240,7 +239,7 @@ subMenuEl.addEventListener("click", (event) => {
     event.preventDefault();
     if (event.target.tagName !== "A") {
       return;
-    }
+}
     console.log(event.target.textContent);
   
 // ask 6.1
@@ -255,13 +254,13 @@ subMenuEl.style.top = "0";
 // Remove the class name of activefrom each <a>element in topMenuLinks- whether the activeclass exists or not.
     
 for (let i = 0; i < topMenuLinks.length; i++) {
-      topMenuLinks[i].classList.remove("active");
-    }
+    topMenuLinks[i].classList.remove("active");
+}
   
 // Task 6.3
 // Update the contents of mainElto the contents of the <a>element, within an <h1>, clicked within subMenuEl.
     
 mainEl.innerHTML = `<h1>${event.target.textContent}</h1>`;
-  });
+});
   
 
